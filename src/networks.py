@@ -49,6 +49,7 @@ class _PCEncoderMethods:
 
     def _project(self, img_feats, xs, ys):
         x, y = xs.flatten(), ys.flatten()
+        #将xs转化为一维向量
         idb = T.arange(img_feats.shape[0], device=img_feats.device)
         idb = idb[None].repeat(xs.shape[1], 1).t().flatten().long()
 
