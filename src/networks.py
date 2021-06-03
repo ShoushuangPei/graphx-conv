@@ -164,7 +164,7 @@ class PointCloudEncoder(nnt.Module, _PCEncoderMethods): #pc_enc
         return super()._output_shape()
 
 
-class CNN18Encoder(nnt.Module, _ImageEncoderMethods):
+class CNN18Encoder(nnt.Module, _ImageEncoderMethods): #输入图片编码器
     def __init__(self, input_shape, activation='relu'):
         super().__init__(input_shape)
 
