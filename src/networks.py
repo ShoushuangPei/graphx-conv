@@ -270,7 +270,7 @@ class PointCloudResLowRankGraphXUpDecoder(nnt.Sequential): #pc_upreslowrankgraph
         self.add_module('conv6', nnt.FC(self.output_shape, 3, activation=None))
 
 
-class PointcloudDeformNet(nnt.Module):
+class PointcloudDeformNet(nnt.Module): #点云形变网络
     def __init__(self, input_shape, pc_shape, img_enc, pc_enc, pc_dec, activation='relu', adain=True, projection=True,
                  **kwargs):
         super().__init__(input_shape=input_shape)
