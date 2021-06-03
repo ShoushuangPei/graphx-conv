@@ -133,7 +133,7 @@ class _ImageEncoderMethods:
         return modules[-1].output_shape
 
 
-class PointCloudEncoder(nnt.Module, _PCEncoderMethods):
+class PointCloudEncoder(nnt.Module, _PCEncoderMethods): #pc_enc
     def __init__(self, pc_shape, out_features, activation='relu', adain=True, projection=True):
         super().__init__(pc_shape)
         self.adain = adain
@@ -204,7 +204,7 @@ class CNN18Encoder(nnt.Module, _ImageEncoderMethods):
         return super()._output_shape()
 
 
-class PointCloudDecoder(nnt.Sequential):
+class PointCloudDecoder(nnt.Sequential): #pc_dec
     def __init__(self, input_shape, activation='relu'):
         super().__init__(input_shape=input_shape)
 
@@ -214,7 +214,7 @@ class PointCloudDecoder(nnt.Sequential):
         self.add_module('conv6', nnt.FC(self.output_shape, 3, activation=None))
 
 
-class PointCloudResDecoder(nnt.Sequential):
+class PointCloudResDecoder(nnt.Sequential): #pc_resdec
     def __init__(self, input_shape, activation='relu'):
         super().__init__(input_shape=input_shape)
 
@@ -224,7 +224,7 @@ class PointCloudResDecoder(nnt.Sequential):
         self.add_module('conv6', nnt.FC(self.output_shape, 3, activation=None))
 
 
-class PointCloudGraphXDecoder(nnt.Sequential):
+class PointCloudGraphXDecoder(nnt.Sequential): #pc_graphxdec
     def __init__(self, input_shape, activation='relu'):
         super().__init__(input_shape=input_shape)
 
@@ -234,7 +234,7 @@ class PointCloudGraphXDecoder(nnt.Sequential):
         self.add_module('conv6', nnt.FC(self.output_shape, 3, activation=None))
 
 
-class PointCloudResGraphXDecoder(nnt.Sequential):
+class PointCloudResGraphXDecoder(nnt.Sequential): #pc_resgraphxdec
     def __init__(self, input_shape, activation='relu'):
         super().__init__(input_shape=input_shape)
 
@@ -244,7 +244,7 @@ class PointCloudResGraphXDecoder(nnt.Sequential):
         self.add_module('conv6', nnt.FC(self.output_shape, 3, activation=None))
 
 
-class PointCloudResGraphXUpDecoder(nnt.Sequential):
+class PointCloudResGraphXUpDecoder(nnt.Sequential): #pc_upresgraphxdec
     def __init__(self, input_shape, activation='relu'):
         super().__init__(input_shape=input_shape)
 
@@ -257,7 +257,7 @@ class PointCloudResGraphXUpDecoder(nnt.Sequential):
         self.add_module('conv6', nnt.FC(self.output_shape, 3, activation=None))
 
 
-class PointCloudResLowRankGraphXUpDecoder(nnt.Sequential):
+class PointCloudResLowRankGraphXUpDecoder(nnt.Sequential): #pc_upreslowrankgraphxdec
     def __init__(self, input_shape, activation='relu', decimation=.5):
         super().__init__(input_shape=input_shape)
 
